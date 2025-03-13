@@ -29,7 +29,7 @@
 
 namespace tool_stats {
 enum class LoreType {
-    Created,
+    Crafted,
     Traded,
     Fished,
     Found,
@@ -80,7 +80,7 @@ LL_TYPE_INSTANCE_HOOK(
         switch (screenType) {
         case SharedTypes::Legacy::ContainerType::Workbench:
         case SharedTypes::Legacy::ContainerType::Inventory:
-            setLore(const_cast<ItemStack&>(srcItem), mPlayer.getRealName(), LoreType::Created);
+            setLore(const_cast<ItemStack&>(srcItem), mPlayer.getRealName(), LoreType::Crafted);
             break;
         case SharedTypes::Legacy::ContainerType::Trade:
             setLore(const_cast<ItemStack&>(srcItem), mPlayer.getRealName(), LoreType::Traded);
