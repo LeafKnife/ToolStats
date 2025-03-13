@@ -36,21 +36,13 @@ enum class LoreType {
 };
 inline std::string getNow() {
     auto now = ll::sys_utils::getLocalTime();
-    return fmt::format(
-        "{:04d}/{:02d}/{:02d} {:02d}:{:02d}:{:02d}",
-        now.tm_year + 1900,
-        now.tm_mon + 1,
-        now.tm_mday,
-        now.tm_hour,
-        now.tm_min,
-        now.tm_sec
-    );
+    return fmt::format("{:04d}/{:02d}/{:02d}", now.tm_year + 1900, now.tm_mon + 1, now.tm_mday);
 }
 
 inline void setLore(ItemStack& item, std::string playerName, LoreType type) {
     auto lores = item.getCustomLore();
-    lores.push_back((std::string)magic_enum::enum_name(type) + "By: " + playerName);
-    lores.push_back("Time: " + getNow());
+    lores.push_back("§r§3" + (std::string)magic_enum::enum_name(type) + "By: §r" + "§g" + playerName + "§r");
+    lores.push_back("§r§3" + (std::string)magic_enum::enum_name(type) + "At: §r" + "§g" + getNow() + "§r");
     item.setCustomLore(lores);
 };
 
@@ -69,9 +61,9 @@ LL_TYPE_INSTANCE_HOOK(
     // auto& dst = ll::memory::dAccess<ItemStackRequestSlotInfo>(&requestAction.mDst, 4);
 
     if (src.mFullContainerName.mName != ContainerEnumName::CreatedOutputContainer)
-        return origin(requestAction, isSwap, isSrcHintSlot, isDstHintSlot);
+        return origin(requestAction, isSrcHintSlot, isDstHintSlot, isSwap);
     ::std::shared_ptr<::SimpleSparseContainer> srcContainer = _getOrInitSparseContainer(src.mFullContainerName);
-    if (!srcContainer) return origin(requestAction, isSwap, isSrcHintSlot, isDstHintSlot);
+    if (!srcContainer) return origin(requestAction, isSrcHintSlot, isDstHintSlot, isSwap);
     auto const& srcItem    = srcContainer->getItem(src.mSlot);
     auto&       screenCtx  = getScreenContext();
     auto        screenType = screenCtx.mUnk2a0ccb.as<SharedTypes::Legacy::ContainerType>();
