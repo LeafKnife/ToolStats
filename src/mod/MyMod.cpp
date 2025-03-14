@@ -19,6 +19,8 @@ bool MyMod::enable() {
     getSelf().getLogger().debug("Enabling...");
     tool_stats::hookPullFishingHook();
     tool_stats::hookItemStackRequestActionHandlerTransfer();
+    tool_stats::hookLootTableUtilsFillContainer();
+    tool_stats::hookLootTableUtilsGenerateRandomDeathLoot();
     // Code for enabling the mod goes here.
     return true;
 }

@@ -35,4 +35,6 @@ private:
 namespace tool_stats {
 void hookPullFishingHook();
 void hookItemStackRequestActionHandlerTransfer();
+void hookLootTableUtilsFillContainer();
+void hookLootTableUtilsGenerateRandomDeathLoot();
 } // namespace tool_stats
