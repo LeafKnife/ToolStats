@@ -4,7 +4,7 @@
     "version": "0.1.2",
     "info": {
         "name": "ToolStats",
-        "description": "物品记录",
+        "description": "Minecraft 基岩版服务器(BDS) 物品使用统计插件",
         "author": "lwenk",
         "tags": [
             "platform:levilamina",
