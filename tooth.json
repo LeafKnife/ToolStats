@@ -9,7 +9,8 @@
         "tags": [
             "platform:levilamina",
             "type:mod"
-        ]
+        ],
+        "avatar_url": "https://github.com/LeafKnife/ToolStats/raw/main/logo.png"
     },
     "asset_url": "https://github.com/LeafKnife/ToolStats/releases/download/v$(version)/ToolStats-windows-x64.zip",
     "prerequisites": {
