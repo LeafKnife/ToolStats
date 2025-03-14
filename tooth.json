@@ -1,7 +1,7 @@
 {
     "format_version": 2,
     "tooth": "github.com/LeafKnife/ToolStats",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "info": {
         "name": "ToolStats",
         "description": "物品记录",
