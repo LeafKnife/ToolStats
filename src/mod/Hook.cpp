@@ -85,7 +85,7 @@ LL_TYPE_INSTANCE_HOOK(
     if (!srcContainer) return origin(requestAction, isSrcHintSlot, isDstHintSlot, isSwap);
     auto const& srcItem    = srcContainer->getItem(src.mSlot);
     auto&       screenCtx  = getScreenContext();
-    auto        screenType = screenCtx.mUnk2a0ccb.as<SharedTypes::Legacy::ContainerType>();
+    auto        screenType = screenCtx.mScreenContainerType;
     auto        itemType   = srcItem.getTypeName();
     if (srcItem.isDamageableItem()) {
         switch (screenType) {
